@@ -9,6 +9,7 @@ const initialState: taskType[] = (() => {
   return JSON.parse(list) as taskType[];
 })();
 
+// since it's a simple todo app and function are quite simple i choose to create all function in this slice instead of making other slices
 const taskManager = createSlice({
   name: 'taskManager',
   initialState,
@@ -34,6 +35,8 @@ const taskManager = createSlice({
   },
 });
 
+// I created this here so that if we ever needed to change the structure of how we get the tasks we change it once here and it changes in all places where it's been used
 export const selectAllTask = (state: RootType) => state.taskManager;
+
 export const { addTask, removeTask, toggleComplete } = taskManager.actions;
 export default taskManager.reducer;

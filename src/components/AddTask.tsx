@@ -36,6 +36,7 @@ function AddTask({
           value={value}
           onChange={(e) => setValue(e.target.value)}
           className="rounded outline-[#D3A121] px-2 h-7"
+          autoFocus
         />
         <input
           type="submit"
