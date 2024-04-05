@@ -1,12 +1,15 @@
 import { useDispatch } from 'react-redux';
 import { taskType } from '../types/types';
-import { toggleComplete } from '../Store/Slices/TaskSlice';
+import { removeTask, toggleComplete } from '../Store/Slices/TaskSlice';
 
 function Task({ task }: { task: taskType }) {
   const dispatch = useDispatch();
   const handleClick = (event: React.MouseEvent<HTMLInputElement>) => {
     event.stopPropagation();
     dispatch(toggleComplete(task.id));
+  };
+  const handleDelete = () => {
+    dispatch(removeTask(task.id));
   };
   return (
     <li className="w-fit flex gap-2 hover:scale-[1.2] transition-transform duration-150 ease-in-out">
@@ -27,6 +30,13 @@ function Task({ task }: { task: taskType }) {
       >
         {task.title}
       </label>
+      <button
+        role="button"
+        className="font-bold border border-[#D3A121] px-2 rounded text-[#D3A121] text-[15px] hover:text-black hover:border-black transition-all duration-200 ease-in-out"
+        onClick={handleDelete}
+      >
+        X
+      </button>
     </li>
   );
 }

@@ -22,8 +22,9 @@ const taskManager = createSlice({
       state.push(task);
     },
     removeTask: (state, action: PayloadAction<string>) => {
-      const newList = state.filter((task) => task.id !== action.payload);
-      state = newList;
+      const taskIndex = state.findIndex((task) => task.id === action.payload);
+      if (taskIndex === -1) return;
+      state.splice(taskIndex, 1);
     },
     toggleComplete: (state, action: PayloadAction<string>) => {
       const foundItem = state.find((task) => task.id === action.payload);
