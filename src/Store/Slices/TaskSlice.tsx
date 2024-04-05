@@ -2,15 +2,12 @@ import { createSlice, nanoid, PayloadAction } from '@reduxjs/toolkit';
 import { taskType } from '../../types/types';
 import { RootType } from '../Store';
 
-const initialState: taskType[] = [
-  { title: 'take the trash', completed: false, id: '1' },
-  { title: 'checkout family', completed: false, id: '2' },
-  { title: 'take a nap', completed: true, id: '3' },
-  { title: 'walk the dog', completed: false, id: '4' },
-  { title: 'take a shower', completed: true, id: '5' },
-  { title: 'pray', completed: false, id: '6' },
-  { title: 'read', completed: false, id: '7' },
-];
+// self running function to get data from local storage if any
+const initialState: taskType[] = (() => {
+  const list = localStorage.getItem('list');
+  if (!list) return [];
+  return JSON.parse(list) as taskType[];
+})();
 
 const taskManager = createSlice({
   name: 'taskManager',
