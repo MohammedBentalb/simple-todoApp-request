@@ -12,7 +12,7 @@ function Task({ task }: { task: taskType }) {
     dispatch(removeTask(task.id));
   };
   return (
-    <li className="origin-top w-fit flex gap-2 hover:scale-[1.2] max-md:hover:scale-[1.05] transition-transform duration-150 ease-in-out">
+    <li className="md:origin-left max-md:origin-top w-[90%] flex gap-2 hover:scale-[1.2] max-md:hover:scale-[1.05] transition-transform duration-150 ease-in-out">
       <input
         type="checkbox"
         name="completed"
@@ -24,7 +24,7 @@ function Task({ task }: { task: taskType }) {
       />
       <label
         htmlFor={`task number ${task.id}`}
-        className={`flex gap-2 items-start cursor-pointer w-full ${
+        className={`flex gap-2 items-start cursor-pointer w-fit ${
           task.completed ? 'line-through' : ''
         }`}
       >
