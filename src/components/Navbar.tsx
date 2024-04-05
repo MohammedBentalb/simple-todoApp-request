@@ -4,8 +4,8 @@ import AddTask from './AddTask';
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="max-width flex justify-between items-center">
-      <h1 className="text-[3rem] font-semibold first-letter:text-[#D3A121]">
+    <nav className="max-width flex justify-between max-sm:flex-col max-sm:items-center items-center">
+      <h1 className="text-[3rem] font-semibold  first-letter:text-[#D3A121]">
         TodoApp
       </h1>
       <button

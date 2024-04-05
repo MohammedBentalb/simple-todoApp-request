@@ -18,6 +18,6 @@
 @layer utilities {
   .max-width {
     width: min(1440px, calc(100% - 2rem));
-    margin: 0 auto;
+    margin-inline: auto;
   }
 }
