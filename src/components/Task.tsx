@@ -12,7 +12,7 @@ function Task({ task }: { task: taskType }) {
     dispatch(removeTask(task.id));
   };
   return (
-    <li className="w-fit flex gap-2 hover:scale-[1.2] transition-transform duration-150 ease-in-out">
+    <li className="origin-top w-fit flex gap-2 hover:scale-[1.2] max-md:hover:scale-[1.05] transition-transform duration-150 ease-in-out">
       <input
         type="checkbox"
         name="completed"
