@@ -32,7 +32,7 @@ function Task({ task }: { task: taskType }) {
       </label>
       <button
         role="button"
-        className="font-bold border border-[#D3A121] px-2 rounded text-[#D3A121] text-[15px] hover:text-black hover:border-black transition-all duration-200 ease-in-out"
+        className="font-bold border h-7 border-[#D3A121] px-2 rounded text-[#D3A121] text-[15px] hover:text-black hover:border-black transition-all duration-200 ease-in-out"
         onClick={handleDelete}
       >
         X
